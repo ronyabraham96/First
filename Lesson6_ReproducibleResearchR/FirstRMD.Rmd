@@ -1,0 +1,43 @@
+---
+title: "Demo"
+author: "Rony Abraham"
+date: "9/14/2019"
+output: html_document
+---
+
+# Formatting Techniques
+
+Bold - **bold**  
+Italics - _Italics_  
+Italics the other way - *Italics*  
+
+# Title  
+## Subtitle  
+### Section Title  
+#### Subsection Title
+
+- Bullet list 1  
+- Bullet list 2  
+
+1. Ordered List 1
+1. Ordered List 2
+1. Ordered List 3 
+
+
+# ggplot
+
+```{r firstchunk}
+gapminder <- read.table("gapminder.txt", header = TRUE)
+head(gapminder)
+```
+
+Plot of life exp
+
+```{r ggplot}
+library(ggplot2)
+ggplot(data = gapminder, aes(x = year, y = lifeExp, by = country)) + 
+  geom_line(color = 'blue') +
+  geom_point()
+```
+
+
